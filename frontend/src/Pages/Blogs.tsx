@@ -1,7 +1,23 @@
+import { AppBar } from "../components/AppBar"
 import { BlogCard } from "../components/BlogCard"
+import { useBlogs } from "../hooks"
 
 export const Blogs = () => {
-    return <div>
-        <BlogCard authorName="siddhi sahu" title="how do i make $4000 every month without doing anything" content="content of how do i make $4000 every month without doing anythinghow do i make $4000 every month without doing anythinghow do i make $4000 every month without doing anything" publishedDate="12 september 2024" />
+    const { loading, blogs } = useBlogs();
+
+    if (loading) {
+        return <div>
+            loading...
+        </div>
+    }
+
+    return <div >
+        <AppBar />
+        <div className="flex justify-center">
+            <div>
+                {blogs.map(blog => <BlogCard id={blog.id} authorName={blog.author.name || "Anonymous"} title={blog.title} content={blog.content} publishedDate="12 september 2024" />)}
+
+            </div>
+        </div>
     </div>
 }

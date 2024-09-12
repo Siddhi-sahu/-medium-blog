@@ -22,7 +22,7 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
             const jwt = response.data.jwt;
 
             localStorage.setItem("token", jwt)
-            navigate("/bulk")
+            navigate("/blogs")
         } catch (e) {
             console.log(e);
             alert("Error while signing up!!")
