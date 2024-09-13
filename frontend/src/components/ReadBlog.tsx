@@ -20,7 +20,7 @@ export const ReadBlog = ({ blog }: { blog: Blog }) => {
                     </div>
                 </div>
                 <div className="col-span-4 ">
-                    <div className="">
+                    <div className="text-lg text-slate-600">
 
                         Author
                     </div>
